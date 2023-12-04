@@ -3,51 +3,8 @@ body{
     padding: 0;
     margin: 0;
 }
-/*
-.hexagon{
-    width: 190px;
-    height: 109px;
-    background-color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-.hexagon2{
-    width: 189px;
-    height: 110px;
-    background-color: #262626;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: rotate(60deg);
-    z-index: 3;
-}
-.hexagon3{
-    width: 190px;
-    height: 109px;
-    background-color: #262626;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: rotate(-60deg);
-}
-.hexagon1{
-    width: 190px;
-    height: 109px;
-    background-color: #262626;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-} 
-.hexagon1,.hexagon2,.hexagon3 {
-    border-left: 1px solid #64ffda;
-   border-right: 1px solid #64ffda;
-}
-.hexagon1:hover,.hexagon2:hover,.hexagon3:hover {
-cursor: pointer;
-}
+/* we use the postion absoulte to keep the boxes from interacting
+with each other since were going to "lay" them on top of each other
 */
 .hex-s{
     position: absolute;
@@ -61,6 +18,10 @@ cursor: pointer;
     text-align: center;
     z-index: 4;
 }
+/* we then also use z index on all of them so the S in the middle
+stays visible during our color change as testing resulted
+in S disapearing when DOM or javascritp edited the background
+color, z index keeps the S on top always*/
 #anchor-one{
     width: 190px;
     height: 109px;;
@@ -89,6 +50,11 @@ cursor: pointer;
     transform: rotate(-60deg);
     z-index: 1;
 }
+/* we add borders to the left and right of the squares to emulate
+the actaul image of the hexagon, as they are just rectangles stacked
+on top of each other. therfore to show the actaul hexagon we make the 
+rest of it have no borders execpt the ends or where the boxes
+stick out in order to acheive the shape */
 #anchor-one,#anchor-two,#anchor-three{
     border-left: 1px solid #64ffda;
     border-right: 1px solid #64ffda;
